@@ -1,0 +1,92 @@
+{
+    "waypoints": [
+        {
+            "id_number": 1,
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Hi There"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The quick brown  fox jumped over the lazy dogs"
+
+                },
+                {
+                    "type": "continue",
+                    "text": "read more..."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The quick brown  fox jumped over the lazy dogs"
+                },
+                {
+                    "type": "choice",
+                    "text": "Click Me",
+                    "slide_Number": 2,
+                    "action": {
+                        "var_name": "yesses",
+                        "type": "increment"
+                    }
+                },
+                {
+                    "type": "choice",
+                    "text": "No, Click Me",
+                    "slide_Number": 3,
+                    "action": {
+                        "var_name": "nos",
+                        "type": "increment"
+                    }
+                }
+            ]
+        },
+        {
+            "id_number": 2,
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Wrong"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I wont do what you tell me!"
+
+                },
+                {
+                    "type": "evaluation",
+                    "var_name": "nos",
+                    "operator": "greater",
+                    "value": 3
+                    
+                }
+
+            ]
+        },
+        {
+            "id_number": 3,
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Well Done"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "way to stick it to the man!"
+
+                }
+            ]
+        }
+    ],
+    "persisant_vars": [
+        {
+            "type": "int",
+            "name": "yesses",
+            "value": 0
+        },
+        {
+            "type": "int",
+            "name": "nos",
+            "value": 0
+        }
+    ]
+}
