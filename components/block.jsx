@@ -1,3 +1,4 @@
 export default function Block(props){
-    return <p>block</p>;
+    console.log(props);
+    return (<p>{props.text}</p>);
 }

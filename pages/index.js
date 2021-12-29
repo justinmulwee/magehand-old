@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Block from '../components/block'
+import gender from '../gender.json'
 import Waypoint from '../components/waypoint'
 
 export default function Home() {
+  console.log(gender);
   return (
     <div className={styles.container}>
       <Head>
@@ -15,13 +16,8 @@ export default function Home() {
 
       <main className={styles.main}>
 
-        <Block />
 
-        <Block />
-
-        <Waypoint />
-        <Block />
-        <Waypoint />
+        <Waypoint blocks={gender.waypoints[0].blocks} />
 
         {/* <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
