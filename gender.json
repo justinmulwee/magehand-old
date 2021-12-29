@@ -34,7 +34,7 @@
 						{
 							"type": "p",
 							"text": "Cool, you can come to my treehouse."
-						}
+						},
 						{
 							"type": "waypoint_link",
 							"text": "Click to go to my secret page.",
