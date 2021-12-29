@@ -1,0 +1,78 @@
+{
+    "waypoints": [
+        {
+            "id_number": 1,
+            "blocks": [
+                {
+                    "type": "p",
+                    "text": "What are you made of?"
+                },
+                {
+					"name": "gender",
+                    "type": "input_radio",
+                    "options": [
+						{
+							"name": "Spiders, snails, and puppydog tails.",
+							"value": "boy"
+						},
+						{
+							"name": "Sugar, spice, and everything nice.",
+							"value": "girl"
+						}
+					]
+                },
+                {
+                    "type": "soft_break",
+                    "text": "Continue"
+                },
+                {
+                    "type": "if",
+					"var_name": "gender",
+					"operator": "is",
+					"value": "boy",
+					"then": [ 
+						{
+							"type": "p",
+							"text": "Cool, you can come to my treehouse."
+						}
+						{
+							"type": "waypoint_link",
+							"text": "Click to go to my secret page.",
+							"waypoint_name": "treehouse"
+						}
+					]
+                },
+                {
+                    "type": "if",
+					"var_name": "gender",
+					"operator": "is",
+					"value": "girl",
+					"then": [
+						{
+							"type": "p",
+							"text": "Cool, that's fine, whatever."
+						}
+					]
+                }
+            ]
+        },
+        {
+            "id_number": 2,
+            "blocks": [
+                {
+                    "type": "h1",
+                    "text": "Secret Treehouse"
+                },
+                {
+                    "type": "p",
+                    "text": "Isn't my treehouse cool?"
+
+                }
+
+            ]
+        }
+    ],
+    "persisant_vars": [
+
+    ]
+}
