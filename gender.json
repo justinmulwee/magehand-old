@@ -4,7 +4,7 @@
             "id_number": 1,
             "blocks": [
                 {
-                    "type": "p",
+                    "type": "paragraph",
                     "text": "What are you made of?"
                 },
                 {
@@ -49,7 +49,7 @@
 					"value": "girl",
 					"then": [
 						{
-							"type": "p",
+							"type": "paragraph",
 							"text": "Cool, that's fine, whatever."
 						}
 					]
@@ -60,11 +60,11 @@
             "id_number": 2,
             "blocks": [
                 {
-                    "type": "h1",
+                    "type": "heading",
                     "text": "Secret Treehouse"
                 },
                 {
-                    "type": "p",
+                    "type": "paragraph",
                     "text": "Isn't my treehouse cool?"
 
                 }
