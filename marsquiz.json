@@ -1,0 +1,92 @@
+{
+	"waypoints": [
+		{
+			"id_number": 1,
+			"blocks": [
+				{
+					"type": "paragraph",
+					"text": "What color is mars?"
+				},
+				{
+					"name": "mars-color",
+					"type": "input_radio",
+					"options": [
+						{
+							"name": "Red",
+							"value": "red",
+							"action": {
+								"var_name": "corrects",
+								"type": "increment"
+							}
+						},
+						{
+							"name": "Blue",
+							"value": "blue"
+						}
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "Compared to earth, how far is Mars from the sun?"
+				},
+				{
+					"name": "mars-distance",
+					"type": "input_radio",
+					"options": [
+						{
+							"name": "Far",
+							"value": "far",
+							"action": {
+								"var_name": "corrects",
+								"type": "increment"
+							}
+						},
+						{
+							"name": "Close",
+							"value": "close"
+						}
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "Why is mars red?"
+				},
+				{
+					"name": "mars-reason",
+					"type": "input_radio",
+					"options": [
+						{
+							"name": "Fire!",
+							"value": "fire"
+						},
+						{
+							"name": "Rust.",
+							"value": "rust",
+							"action": {
+								"var_name": "corrects",
+								"type": "increment"
+							}
+						}
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "Score {score}"
+				}
+			]
+		}
+	],
+	"persistent_vars": [
+		{
+			"name": "corrects",
+			"type": "int",
+			"value": 0
+		},
+		{
+			"name": "score",
+			"type": "int",
+			"value": {corrects}/3*100 //this isn't allowed.
+
+		}
+	]
+}
