@@ -1,9 +1,11 @@
-import Block from './block'
-import InputRadio from './inputRadio'
+import Block from './block';
+import InputRadio from './inputRadio';
+import React, {useState} from 'react';
 
 export default function Waypoint(props){
+    const [remainingBreaks, setRemainingBreaks] = useState(0);
     const components = [];
-    let remainingBreaks = props.softBreaks
+    let unrenderedBreaks = remainingBreaks+1;
     for(let block of props.blocks){
         if(block.type === 'paragraph'){
             components.push(<Block text={block.text} />);
@@ -18,9 +20,13 @@ export default function Waypoint(props){
 
         }
         else if(block.type === 'soft_break'){
-            remainingBreaks -= 1;
-            components.push(<button>{block.text}</button>);
-            if(remainingBreaks === 0){
+            unrenderedBreaks -= 1;
+            components.push(
+            <button onClick={() => setRemainingBreaks(remainingBreaks+1)}>
+                {block.text}
+            </button>
+            );
+            if(unrenderedBreaks === 0){
                 break;
             }
         }
