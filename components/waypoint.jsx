@@ -21,12 +21,12 @@ export default function Waypoint(props){
         }
         else if(block.type === 'soft_break'){
             unrenderedBreaks -= 1;
-            components.push(
-            <button onClick={() => setRemainingBreaks(remainingBreaks+1)}>
-                {block.text}
-            </button>
-            );
             if(unrenderedBreaks === 0){
+                components.push(
+                <button onClick={() => setRemainingBreaks(remainingBreaks+1)}>
+                    {block.text}
+                </button>
+                );
                 break;
             }
         }
