@@ -2,13 +2,14 @@ import Block from './block'
 import InputRadio from './inputRadio'
 
 export default function Waypoint(props){
-    let soft_break = false;
-    return props.blocks.map(function(block){
+    const components = [];
+    let remainingBreaks = props.softBreaks
+    for(let block of props.blocks){
         if(block.type === 'paragraph'){
-            return <Block text={block.text} />
+            components.push(<Block text={block.text} />);
         }
         else if(block.type === 'input_radio'){
-            return <InputRadio options={block.options} name={block.name} />
+            components.push(<InputRadio options={block.options} name={block.name} />);
         }
         else if(block.type === 'if'){
 
@@ -17,11 +18,15 @@ export default function Waypoint(props){
 
         }
         else if(block.type === 'soft_break'){
-            soft_break = true;
-            return <button>{block.text}</button>
+            remainingBreaks -= 1;
+            components.push(<button>{block.text}</button>);
+            if(remainingBreaks === 0){
+                break;
+            }
         }
         else if(block.type === 'input_radio'){
 
         }
-    })
+    }
+    return components;
 }

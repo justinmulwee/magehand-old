@@ -26,6 +26,10 @@
                     "text": "Continue"
                 },
                 {
+                    "type": "paragraph",
+                    "text": "This is a test"
+                },
+                {
                     "type": "if",
 					"var_name": "gender",
 					"operator": "is",

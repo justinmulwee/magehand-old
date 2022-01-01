@@ -17,7 +17,7 @@ export default function Home() {
       <main className={styles.main}>
 
 
-        <Waypoint blocks={gender.waypoints[0].blocks} />
+        <Waypoint blocks={gender.waypoints[0].blocks} softBreaks={2} />
 
         {/* <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
