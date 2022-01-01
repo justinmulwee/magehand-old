@@ -14,10 +14,10 @@ export default function Waypoint(props){
             components.push(<InputRadio options={block.options} name={block.name} />);
         }
         else if(block.type === 'if'){
-
+            
         }
         else if(block.type === 'heading'){
-
+            components.push(<h1>{block.text}</h1>)
         }
         else if(block.type === 'soft_break'){
             unrenderedBreaks -= 1;
@@ -29,9 +29,6 @@ export default function Waypoint(props){
                 );
                 break;
             }
-        }
-        else if(block.type === 'input_radio'){
-
         }
     }
     return components;
