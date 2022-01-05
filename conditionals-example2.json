@@ -1,0 +1,50 @@
+{
+	"waypoints": [
+		{
+			"id_number": 1,
+			"blocks": [
+				{
+					"type": "conditional_section",
+					"triggers": [
+						{
+							"conditions": [
+								{
+									"variable": "health",
+									"operator": "less-than",
+									"value": 5
+								},
+								{
+									"variable": "poisoned",
+									"operator": "equals",
+									"value": "yes"
+								}
+							]
+						},
+						{
+							"conditions": [
+								{
+									"variable": "health",
+									"operator":"less-than",
+									"value": 3
+								}
+							]
+						}
+					],
+					"triggered-blocks": [
+						{
+							"type": "paragraph",
+							"content": "Your life flashes before your eyes..."
+						}
+					]
+				}
+			]
+		}
+	],
+	"persistent_vars": [
+		{
+			"variable_name": "health",
+			"type": "int",
+			"value": 10
+		}
+	]
+}

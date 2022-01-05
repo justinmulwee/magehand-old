@@ -1,6 +1,13 @@
 {
 	"waypoints": [
-
+		{
+			"id_number": 1,
+			"blocks": [
+				{
+					
+				}
+			]
+		}
 	],
 	"persistent_vars": [
 		
