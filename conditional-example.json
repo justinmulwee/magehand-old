@@ -1,0 +1,31 @@
+{
+	"waypoints": [
+		{
+			"id_number": 1,
+			"blocks": [
+				{
+					"type": "conditional_section",
+					"alternative-triggers": [
+						{
+							"required-conditions": [
+								{
+									"variable": "health",
+									"operator": "less-than",
+									"value": 5
+								},
+								{
+									"variable": "poisoned",
+									"operator": "equals",
+									"value": "yes"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"persistent_vars": [
+		
+	]
+}
