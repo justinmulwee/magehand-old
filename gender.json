@@ -46,6 +46,15 @@
                     "text": "This is a test"
                 },
                 {
+                    "type": "choice",
+                    "text": "Click Me",
+                    "slideNumber": 2,
+                    "action": {
+                        "var_name": "yesses",
+                        "type": "increment"
+                    }
+                },
+                {
                     "type": "if",
 					"var_name": "gender",
 					"operator": "is",

@@ -1,12 +1,13 @@
 import Block from './block';
+import Link from 'next/link'
 import InputRadio from './inputRadio';
 import React, {useState} from 'react';
 
-export default function Waypoint(props){
+export default function Waypoint({blocks}){
     const [remainingBreaks, setRemainingBreaks] = useState(0);
     const components = [];
     let unrenderedBreaks = remainingBreaks+1;
-    for(let block of props.blocks){
+    for(let block of blocks){
         if(block.type === 'paragraph'){
             components.push(<Block text={block.text} />);
         }
@@ -14,7 +15,7 @@ export default function Waypoint(props){
             components.push(<InputRadio options={block.options} name={block.name} />);
         }
         else if(block.type === 'if'){
-            
+
         }
         else if(block.type === 'heading'){
             components.push(<h1>{block.text}</h1>)
@@ -29,6 +30,10 @@ export default function Waypoint(props){
                 );
                 break;
             }
+        }
+        else if (block.type === 'choice'){
+            console.log(block);
+            components.push(<Link href="/waypoint/[id]" as={`/waypoint/${block.slideNumber}`}>{block.text}</Link>)
         }
     }
     return components;
