@@ -1,27 +1,35 @@
-import Block from './block'
-import InputRadio from './inputRadio'
+import Block from './block';
+import InputRadio from './inputRadio';
+import React, {useState} from 'react';
 
 export default function Waypoint(props){
-    let soft_break = false;
-    return props.blocks.map(function(block){
+    const [remainingBreaks, setRemainingBreaks] = useState(0);
+    const components = [];
+    let unrenderedBreaks = remainingBreaks+1;
+    for(let block of props.blocks){
         if(block.type === 'paragraph'){
-            return <Block text={block.text} />
+            components.push(<Block text={block.text} />);
         }
         else if(block.type === 'input_radio'){
-            return <InputRadio options={block.options} name={block.name} />
+            components.push(<InputRadio options={block.options} name={block.name} />);
         }
         else if(block.type === 'if'){
-
+            
         }
         else if(block.type === 'heading'){
-
+            components.push(<h1>{block.text}</h1>)
         }
         else if(block.type === 'soft_break'){
-            soft_break = true;
-            return <button>{block.text}</button>
+            unrenderedBreaks -= 1;
+            if(unrenderedBreaks === 0){
+                components.push(
+                <button onClick={() => setRemainingBreaks(remainingBreaks+1)}>
+                    {block.text}
+                </button>
+                );
+                break;
+            }
         }
-        else if(block.type === 'input_radio'){
-
-        }
-    })
+    }
+    return components;
 }
