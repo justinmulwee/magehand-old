@@ -10,6 +10,7 @@
                 {
 					"name": "gender",
                     "type": "input_radio",
+                    "variableName": "gender",
                     "options": [
 						{
 							"name": "Spiders, snails, and puppydog tails.",
@@ -26,54 +27,25 @@
                     "text": "Continue"
                 },
                 {
-                    "type": "paragraph",
-                    "text": "This is a test"
-                },
-                {
-                    "type": "soft_break",
-                    "text": "Continue"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "This is a test"
-                },
-                {
-                    "type": "soft_break",
-                    "text": "Continue"
-                },
-                {
-                    "type": "paragraph",
-                    "text": "This is a test"
-                },
-                {
-                    "type": "choice",
-                    "text": "Click Me",
-                    "slideNumber": 2,
-                    "action": {
-                        "var_name": "yesses",
-                        "type": "increment"
-                    }
-                },
-                {
                     "type": "if",
-					"var_name": "gender",
+					"variableName": "gender",
 					"operator": "is",
 					"value": "boy",
 					"then": [ 
 						{
-							"type": "p",
+							"type": "paragraph",
 							"text": "Cool, you can come to my treehouse."
 						},
 						{
-							"type": "waypoint_link",
+							"type": "waypointLink",
 							"text": "Click to go to my secret page.",
-							"waypoint_name": "treehouse"
+							"slideNumber": 2
 						}
 					]
                 },
                 {
                     "type": "if",
-					"var_name": "gender",
+					"variableName": "gender",
 					"operator": "is",
 					"value": "girl",
 					"then": [
@@ -101,7 +73,12 @@
             ]
         }
     ],
-    "persisent_vars": [
-
+    "variables": [
+        { 
+            "name":"gender",
+            "type":"string",
+            "value": null
+        },
+        {}
     ]
 }

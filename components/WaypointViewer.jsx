@@ -1,6 +1,7 @@
 import Waypoint from './waypoint'
 import gender from '../gender.json'
 import {useRouter} from 'next/router'
+import { VarsProvider } from '../modules/varsContext'
 export default function WaypointViewer(){
   const router = useRouter()
   const {id} = router.query
@@ -15,6 +16,9 @@ export default function WaypointViewer(){
   } else {
     waypoint = gender.waypoints[0];
   }
-  console.log(waypoint);
-  return (<Waypoint blocks={waypoint.blocks} />);
+  return (
+    <VarsProvider value={gender.variables} >
+      <Waypoint blocks={waypoint.blocks} />
+    </VarsProvider>
+  );
 }
